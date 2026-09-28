@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA FLORA 晶透琉璃｜水晶花造花液工藝與原料專賣</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <style>
+    :root {
+      --primary-color: #8C6D46;
+      --primary-dark: #5C4324;
+      --bg-cream: #FAF8F5;
+      --card-border: #E8DFD3;
+    }
+    /* 全域基準字型 (18px) */
+    html, body {
+      font-size: 18px;
+      background-color: var(--bg-cream);
+      color: #333333;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+      line-height: 1.65;
+    }
+    .navbar-brand {
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--primary-dark) !important;
+    }
+    .nav-link {
+      font-size: 1.05rem;
+    }
+    .hero-section {
+      background: linear-gradient(180deg, #F3ECE2 0%, var(--bg-cream) 100%);
+      padding: 5.5rem 0 4.5rem 0;
+    }
+    .card-product, .card-artwork {
+      border: 1px solid var(--card-border);
+      border-radius: 1.1rem;
+      background-color: #ffffff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
+    }
+    .card-product:hover, .card-artwork:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(92, 67, 36, 0.1);
+    }
+    .btn-brand {
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      font-size: 1.05rem;
+    }
+    .btn-brand:hover {
+      background-color: var(--primary-dark);
+      color: #fff;
+    }
+    .badge-brand {
+      background-color: #EFE6D8;
+      color: var(--primary-dark);
+      font-size: 0.95rem;
+    }
+    .artwork-img-wrapper {
+      height: 300px;
+      overflow: hidden;
+      background-color: #f7f7f7;
+      position: relative;
+      cursor: pointer;
+    }
+    .artwork-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .artwork-img-wrapper:hover img {
+      transform: scale(1.06);
+    }
+
+    /* 放大檢視提示標籤（常駐右上角） */
+    .zoom-hint {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(30, 30, 30, 0.7);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      z-index: 2;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      pointer-events: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .artwork-img-wrapper:hover .zoom-hint, .prod-img-wrapper:hover .zoom-hint {
+      background: rgba(20, 20, 20, 0.88);
+      transform: scale(1.06);
+    }
+
+    .prod-img-wrapper {
+      height: 220px;
+      background: #FAFAFA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      position: relative;
+      cursor: pointer;
+    }
+    .prod-img-wrapper img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .prod-img-wrapper:hover img {
+      transform: scale(1.05);
+    }
+    .drawer-cart {
+      width: 420px !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部公告列 -->
+  <div class="bg-dark text-light py-2 text-center" style="font-size: 0.95rem;">
+    ✨ 日本 PADICO 原廠原裝正品進口 ｜ 原料滿 NT$ 1,500 即享免運 ｜ 支援 綠界 ECPay、LINE Pay、藍新付款
+  </div>
+
+  <!-- 導航列 -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-gem text-warning fs-3"></i>
+        <span>AURA FLORA <small class="fw-normal text-muted d-none d-sm-inline" style="font-size: 1rem;">晶透琉璃・造花原料</small></span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium">
+          <li class="nav-item"><a class="nav-link px-3" href="#artworks">作品賞析</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#materials">職人原料</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#science">成膜科普</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#faq">新手 QA</a></li>
+        </ul>
+        
+        <div class="d-flex align-items-center gap-2">
+          <!-- 購物車按鈕 -->
+          <button class="btn btn-outline-secondary position-relative rounded-pill px-3 py-2" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+            <i class="bi bi-bag fs-5"></i>
+            <span id="cartCountBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.85rem;">0</span>
+          </button>
+          <!-- 後台登入按鈕 -->
+          <button class="btn btn-outline-dark rounded-pill px-3 py-2" id="adminEntryBtn" onclick="handleAdminEntryClick()" style="font-size: 0.95rem;">
+            <i class="bi bi-shield-lock me-1"></i>後台管理
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero 區塊 -->
+  <section class="hero-section text-center">
+    <div class="container py-4">
+      <div class="badge badge-brand rounded-pill px-4 py-2 mb-3 fw-bold">
+        <i class="bi bi-sparkles me-1"></i>專業級高透造花液・薄透成膜・低味純淨配方
+      </div>
+      <h1 class="display-4 fw-bold mb-3" style="color: var(--primary-dark);">定格琉璃般的永恆光影</h1>
+      <p class="lead text-muted mx-auto mb-4" style="max-width: 840px; line-height: 1.85; font-size: 1.25rem;">
+        每一瓣晶透，都是指尖與光影的細膩對話。精選<strong>高流動性、韌性持久</strong>的專業造花原料，告別刺鼻氣味與易碎困擾，讓初學者也能輕鬆拉出無瑕膜面。將四季繁花化作永不凋零的水晶藝術。
+      </p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#artworks" class="btn btn-brand rounded-pill px-4 py-2"><i class="bi bi-images me-1"></i> 欣賞作品</a>
+        <a href="#materials" class="btn btn-outline-secondary rounded-pill px-4 py-2" style="font-size: 1.05rem;">選購日本星之雫原料</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品賞析區 -->
+  <section id="artworks" class="py-5 bg-white">
+    <div class="container py-3">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <span class="text-uppercase fw-bold text-muted" style="font-size: 0.95rem;">Portfolio</span>
+          <h2 class="h2 fw-bold" style="color: var(--primary-dark);">水晶畫與花藝創作賞析</h2>
+        </div>
+        <span class="text-muted" style="font-size: 1rem;">（點擊照片可放大檢視細節）</span>
+      </div>
+
+      <div class="row g-4" id="artworksContainer">
+        <!-- 動態渲染作品 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 職人原料專區 -->
+  <section id="materials" class="py-5" style="background-color: #F8F5F0;">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <span class="text-uppercase fw-bold text-muted" style="font-size: 0.95rem;">Materials</span>
+        <h2 class="h2 fw-bold" style="color: var(--primary-dark);">日本 PADICO 職人原料專區</h2>
+        <p class="text-muted" style="font-size: 1.15rem;">高透明度、超快速脫泡、抗發黃耐久配方（點選圖片可放大觀看）</p>
+      </div>
+
+      <div class="row g-4" id="productsContainer">
+        <!-- 動態渲染原料產品 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 科普原理 -->
+  <section id="science" class="py-5 bg-white">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <h2 class="h2 fw-bold" style="color: var(--primary-dark);">硬核科普：成膜與水晶化原理</h2>
+        <p class="text-muted" style="font-size: 1.15rem;">為什麼一汪液體，拿鐵絲輕輕一蘸，就能變成如天然寶石般的花瓣？</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="p-4 border rounded-4 bg-light h-100">
+            <h4 class="fw-bold mb-3"><i class="bi bi-droplet-half text-primary me-2"></i>1. 表面張力與成膜性（造花液）</h4>
+            <ul class="text-secondary mb-0 lh-lg" style="font-size: 1rem;">
+              <li><strong>如吹泡泡般的自然張力</strong>：封閉的細鐵絲圈浸入造花液再垂直提起時，液體藉由表面張力被拉扯成均勻薄膜。</li>
+              <li><strong>溶劑極速揮發交聯</strong>：專用溶劑在接觸空氣的數秒內揮發，樹脂分子迅速彼此緊密交聯，形成平整固態膜。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 border rounded-4 bg-light h-100">
+            <h4 class="fw-bold mb-3"><i class="bi bi-sun text-warning me-2"></i>2. 紫外線光固化（UV-LED 膠加固）</h4>
+            <ul class="text-secondary mb-0 lh-lg" style="font-size: 1rem;">
+              <li><strong>光敏引發劑激發</strong>：星之雫與空之雫含有微量光引發劑，吸收 365~405nm 紫外線。</li>
+              <li><strong>三維立體網絡鎖定</strong>：照燈 30~90 秒即刻轉化為超硬質立體網絡，耐磨抗刮、長效不黃變。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 新手 QA -->
+  <section id="faq" class="py-5 border-top">
+    <div class="container py-3" style="max-width: 900px;">
+      <h2 class="h2 fw-bold text-center mb-4" style="color: var(--primary-dark);">買家貼心守則・新手避坑指南</h2>
+      
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+              蘸取時出現氣泡怎麼辦？花瓣上有孔隙如何避免？
+            </button>
+          </h2>
+          <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-secondary lh-base" style="font-size: 1.05rem;">
+              鐵絲進出液體時請保持慢速等速。剛蘸取後輕敲瓶口震出大氣泡，細泡可用牙籤引導至邊緣刺破；亦可選用「空之雫」超低黏度款快速自然消泡。
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item mb-3 border rounded-3 overflow-hidden">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+              為什麼做出來的花瓣容易塌陷、變形甚至乾裂？
+            </button>
+          </h2>
+          <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-secondary lh-base" style="font-size: 1.05rem;">
+              環境濕度若高於 65% 成膜容易發白且軟化，請在冷氣房製作。若花瓣直徑大於 3cm，請於中心加一根「葉脈支撐線」輔助抓取，完成後務必以星之雫雙面塗刷照光加固。
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border rounded-3 overflow-hidden">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+              操作時的安全與通風建議有哪些？
+            </button>
+          </h2>
+          <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-secondary lh-base" style="font-size: 1.05rem;">
+              造花液含有揮發性有機溶劑，務必於通風良好（開窗或抽風機）環境操作；遠離火源與高溫，使用完畢將瓶蓋旋緊密封。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 圖片放大檢視 Lightbox Modal -->
+  <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold text-dark fs-5" id="lightboxTitle">圖片放大檢視</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 text-center">
+          <div class="rounded-3 bg-light p-2 mb-3 d-flex align-items-center justify-content-center" style="min-height: 380px; max-height: 540px; overflow: hidden;">
+            <img id="lightboxImage" src="" class="img-fluid rounded" style="max-height: 500px; object-fit: contain;">
+          </div>
+          <div class="text-start px-2">
+            <span class="badge badge-brand mb-2" id="lightboxBadge">分類</span>
+            <h4 class="fw-bold text-dark mt-1" id="lightboxName">標題</h4>
+            <p class="text-secondary mb-0 lh-base" style="font-size: 1.05rem;" id="lightboxDesc">說明文字...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 購物車抽屜 (Offcanvas) -->
+  <div class="offcanvas offcanvas-end drawer-cart" tabindex="-1" id="cartOffcanvas">
+    <div class="offcanvas-header border-bottom">
+      <h4 class="offcanvas-title fw-bold fs-5"><i class="bi bi-cart3 me-2"></i>購物清單</h4>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-col flex-column">
+      <div id="cartItemsList" class="flex-grow-1 overflow-auto mb-3"></div>
+      
+      <div class="border-top pt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted" style="font-size: 1.1rem;">商品小計</span>
+          <span class="fs-3 fw-bold text-dark" id="cartTotalDisplay">NT$ 0</span>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold text-muted" style="font-size: 0.95rem;">選擇金流結帳渠道</label>
+          <div class="btn-group w-100" role="group">
+            <input type="radio" class="btn-check" name="gatewayRadio" id="gw_ecpay" value="ecpay" checked>
+            <label class="btn btn-outline-dark py-2" for="gw_ecpay" style="font-size: 0.95rem;">綠界 ECPay</label>
+
+            <input type="radio" class="btn-check" name="gatewayRadio" id="gw_linepay" value="linepay">
+            <label class="btn btn-outline-dark py-2" for="gw_linepay" style="font-size: 0.95rem;">LINE Pay</label>
+
+            <input type="radio" class="btn-check" name="gatewayRadio" id="gw_newebpay" value="newebpay">
+            <label class="btn btn-outline-dark py-2" for="gw_newebpay" style="font-size: 0.95rem;">藍新金流</label>
+          </div>
+        </div>
+
+        <button class="btn btn-brand w-100 py-3 fw-bold rounded-pill mb-2" onclick="startCheckoutProcess()" style="font-size: 1.1rem;">
+          <i class="bi bi-lock me-1"></i> 前往安全結帳
+        </button>
+
+        <button type="button" class="btn btn-outline-secondary w-100 py-2 fw-medium rounded-pill" data-bs-dismiss="offcanvas" style="font-size: 1rem;">
+          <i class="bi bi-arrow-left me-1"></i> 繼續購物
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 後台登入 Modal -->
+  <div class="modal fade" id="adminLoginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold fs-5"><i class="bi bi-shield-lock me-2 text-primary"></i>管理員身分驗證</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="text-muted mb-3" style="font-size: 0.95rem;">請輸入管理帳號密碼以進入作品與原料照片管理控制台。</p>
+          <div id="loginAlertBox" class="alert alert-danger py-2 small d-none"></div>
+          
+          <form id="adminLoginForm" onsubmit="event.preventDefault(); submitAdminLogin();">
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">帳號 (Username)</label>
+              <input type="text" class="form-control form-control-lg fs-6" id="loginUsername" placeholder="預設：700817" required>
+            </div>
+            <div class="mb-4">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">密碼 (Password)</label>
+              <input type="password" class="form-control form-control-lg fs-6" id="loginPassword" placeholder="預設：700817" required>
+            </div>
+            <button type="submit" class="btn btn-dark w-100 py-2 fw-bold rounded-pill fs-6">登入後台</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 後台主面板 Modal -->
+  <div class="modal fade" id="adminDashboardModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <div class="modal-header bg-dark text-white">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-sliders fs-5"></i>
+            <h5 class="modal-title fw-bold fs-5">後台管理控制台 (圖文、照片與帳號管理)</h5>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-sm btn-outline-light rounded-pill" onclick="openAccountManageModal()"><i class="bi bi-person-gear me-1"></i>帳號管理</button>
+            <button class="btn btn-sm btn-danger rounded-pill" onclick="logoutAdmin()"><i class="bi bi-box-arrow-right me-1"></i>登出</button>
+            <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="modal"></button>
+          </div>
+        </div>
+
+        <div class="modal-body p-4">
+          <ul class="nav nav-pills mb-4" id="adminTab" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active fw-bold fs-6" id="art-tab" data-bs-toggle="pill" data-bs-target="#adminArtTab">作品照片與說明管理</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link fw-bold fs-6" id="prod-tab" data-bs-toggle="pill" data-bs-target="#adminProdTab">原料照片與說明管理</button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="adminTabContent">
+            <div class="tab-pane fade show active" id="adminArtTab">
+              <div class="row g-3" id="adminArtList"></div>
+            </div>
+            <div class="tab-pane fade" id="adminProdTab">
+              <div class="row g-3" id="adminProdList"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 後台底部按鈕列：新增「＋ 新增選項」按鈕 -->
+        <div class="modal-footer border-top bg-light d-flex justify-content-between align-items-center">
+          <div>
+            <button class="btn btn-primary fw-bold px-4" id="openAddItemBtn" onclick="openCreateItemModal()">
+              <i class="bi bi-plus-circle me-1"></i> 新增選項
+            </button>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-danger" onclick="resetAllPhotosToDefault()" style="font-size: 0.95rem;">還原為預設圖文與路徑</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-size: 0.95rem;">關閉控制台</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 新增選項 Modal（支援上傳照片與設定說明） -->
+  <div class="modal fade" id="createItemModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 shadow border-0">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold fs-5" id="createModalTitle">
+            <i class="bi bi-plus-square-dotted me-2 text-primary"></i>新增項目
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="createItemForm" onsubmit="event.preventDefault(); submitCreateItem();">
+            <!-- 圖片上傳區塊 -->
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">上傳選項照片</label>
+              <div class="border rounded-3 p-3 text-center bg-light cursor-pointer" onclick="document.getElementById('newItemFileInput').click()" style="cursor: pointer;">
+                <div id="newItemImgPreview" class="d-none mb-2" style="height: 160px;">
+                  <img src="" id="newItemPreviewImg" class="h-100 w-auto rounded object-fit-contain shadow-sm">
+                </div>
+                <div id="newItemUploadPlaceholder">
+                  <i class="bi bi-cloud-arrow-up text-primary fs-2"></i>
+                  <p class="small text-muted mb-0 mt-1">點此選取本機圖片 (JPG/PNG)</p>
+                </div>
+              </div>
+              <input type="file" id="newItemFileInput" accept="image/*" class="d-none" required>
+            </div>
+
+            <!-- 名稱 -->
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">名稱 / 標題</label>
+              <input type="text" class="form-control" id="newItemTitle" placeholder="例如：冰晶山茶花框畫 / 500g 稀釋劑" required>
+            </div>
+
+            <!-- 分類標籤與價格 -->
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label fw-bold" style="font-size: 0.95rem;">標籤 / 規格</label>
+                <input type="text" class="form-control" id="newItemTag" placeholder="例如：新娘飾品 / 100g裝" required>
+              </div>
+              <div class="col-6" id="newItemPriceGroup">
+                <label class="form-label fw-bold" style="font-size: 0.95rem;">售價 (NT$)</label>
+                <input type="number" class="form-control" id="newItemPrice" placeholder="例如：350">
+              </div>
+            </div>
+
+            <!-- 詳細說明 -->
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">說明文字</label>
+              <textarea class="form-control" id="newItemDesc" rows="3" placeholder="請填寫作品特色或原料適用範圍..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold rounded-pill">
+              <i class="bi bi-check2-circle me-1"></i> 確認建立新選項
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 帳號管理 Modal -->
+  <div class="modal fade" id="accountManageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 shadow border-0">
+        <div class="modal-header border-bottom">
+          <h6 class="modal-title fw-bold fs-5"><i class="bi bi-person-gear me-2 text-primary"></i>管理者帳號設定</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form onsubmit="event.preventDefault(); saveAccountSettings();">
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">後台登入帳號 (Username)</label>
+              <input type="text" class="form-control" id="manageAdminUsername" required minlength="3">
+              <div class="form-text">預設帳號為 700817，可自訂為專屬帳號。</div>
+            </div>
+            <hr>
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">新密碼 (New Password)</label>
+              <input type="password" class="form-control" id="manageAdminPassword" required minlength="4">
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">確認新密碼 (Confirm Password)</label>
+              <input type="password" class="form-control" id="manageConfirmPassword" required minlength="4">
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold rounded-pill">儲存並更新帳號資訊</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 編輯圖文說明 Modal -->
+  <div class="modal fade" id="editDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 shadow border-0">
+        <div class="modal-header border-bottom">
+          <h6 class="modal-title fw-bold fs-5"><i class="bi bi-pencil-square me-1"></i>編輯圖文說明</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form onsubmit="event.preventDefault(); saveDetailChanges();">
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">作品/商品名稱</label>
+              <input type="text" class="form-control" id="editItemTitle" required>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label fw-bold" style="font-size: 0.95rem;">標籤 / 規格</label>
+                <input type="text" class="form-control" id="editItemTag" required>
+              </div>
+              <div class="col-6" id="editPriceGroup">
+                <label class="form-label fw-bold" style="font-size: 0.95rem;">售價 (NT$)</label>
+                <input type="number" class="form-control" id="editItemPrice">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="font-size: 0.95rem;">詳細說明文案</label>
+              <textarea class="form-control" id="editItemDesc" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-brand w-100 py-2 fw-bold rounded-pill">儲存並套用更動</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 金流結帳 Modal -->
+  <div class="modal fade" id="paymentProcessModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow rounded-4">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-success fs-5"><i class="bi bi-shield-check me-2"></i>安全加密結帳</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="bg-light p-3 rounded-3 mb-3" style="font-size: 1rem;">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">金流平台：</span>
+              <span class="fw-bold" id="payModalGatewayName">ECPAY</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">訂單編號：</span>
+              <span class="fw-mono" id="payModalOrderId">ORD-00000</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-muted">結帳總額：</span>
+              <span class="fw-bold text-danger fs-5" id="payModalAmount">NT$ 0</span>
+            </div>
+          </div>
+          <button class="btn btn-success w-100 py-2 fw-bold fs-6" onclick="simulatePaymentSuccess()">
+            模擬付款成功（回傳 RtnCode: 1）
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 隱藏檔案選取器 -->
+  <input type="file" id="adminReplaceInput" accept="image/*" class="d-none">
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const defaultArtworks = [
+      { id: 'art-1', title: '雙色山茶花・立體標本原木框畫', tag: '居家軟裝', file: '水晶花作品-01.jpg', src: '水晶花/水晶花作品/水晶花作品-01.jpg', desc: '純白造花液勾勒花形，結合立體標本深凹原木框，呈現通透高雅的日式生活美學。' },
+      { id: 'art-2', title: '單朵白山茶・立體手作飾品畫', tag: '標本藝術', file: '水晶花作品-02.jpg', src: '水晶花/水晶花作品/水晶花作品-02.jpg', desc: '採用空之雫超低黏度膠封層，花瓣晶瑩透亮無氣泡，封存盛放之姿。' },
+      { id: 'art-3', title: '高透晶瑩洋桔梗・指尖細節', tag: '手工特寫', file: '水晶花作品-03.jpg', src: '水晶花/水晶花作品/水晶花作品-03.jpg', desc: '極細金屬線搭配微皺花邊工藝，光線穿透下呈現如琉璃寶石般的薄透光澤。' },
+      { id: 'art-4', title: '四季玫瑰單枝花藝（四色瓶插）', tag: '花藝擺件', file: '水晶花作品-04.jpg', src: '水晶花/水晶花作品/水晶花作品-04.jpg', desc: '琥珀、復古粉、鵝黃與湛藍四款漸層花色，單枝瓶插為日常注入長久靜謐療癒。' }
+    ];
+
+    const defaultProducts = [
+      { id: 'prod-1', name: '日本 PADICO 星之雫 (30g) 硬式樹脂膠', price: 290, spec: '30g 輕量裝', file: '水晶花原料-02.jpg', src: '水晶花/水晶花材料/水晶花原料-02.jpg', desc: '適用於飾品手作、滴膠作品，30~90秒快速固化，高透且長期不發黃。' },
+      { id: 'prod-2', name: '日本 PADICO 星之雫 (200g) 硬式樹脂膠', price: 1350, spec: '200g 大容量包裝', file: '水晶花原料-03.jpg', src: '水晶花/水晶花材料/水晶花原料-03.jpg', desc: '手作職人首選！適用矽膠模具與大面積作品雙面塗布加固。' },
+      { id: 'prod-3', name: '日本 PADICO 星之雫 (500g) 工藝級硬式膠', price: 2850, spec: '500g 旗艦裝', file: '水晶花原料-04.jpg', src: '水晶花/水晶花材料/水晶花原料-04.jpg', desc: '大作專用特大容量，提供極高的硬度與琉璃般通透感。' },
+      { id: 'prod-4', name: '日本 PADICO 空之雫 (30g) 超低黏度樹脂液', price: 320, spec: '30g 隨身裝', file: '水晶花原料-05.jpg', src: '水晶花/水晶花材料/水晶花原料-05.jpg', desc: '超低黏度、高流平性，極易自然脫泡，呈現超硬質高光感。' },
+      { id: 'prod-5', name: '日本 PADICO 空之雫 (100g) 超低黏度樹脂液', price: 820, spec: '100g 補充瓶', file: '水晶花原料-06.jpg', src: '水晶花/水晶花材料/水晶花原料-06.jpg', desc: '適合精緻花瓣輕薄塗佈，微景露珠與淚滴特效。' },
+      { id: 'prod-6', name: '日本 PADICO 空之雫 (200g) 超低黏度樹脂液', price: 1480, spec: '200g 超值裝', file: '水晶花原料-07.jpg', src: '水晶花/水晶花材料/水晶花原料-07.jpg', desc: '脫泡迅速、超硬光澤，專為高品質造花作品打造。' }
+    ];
+
+    let artworks = JSON.parse(localStorage.getItem('aura_artworks_data')) || defaultArtworks;
+    let products = JSON.parse(localStorage.getItem('aura_products_data')) || defaultProducts;
+    let cart = [];
+    let isAdminLoggedIn = sessionStorage.getItem('aura_admin_logged') === 'true';
+    let currentAdminTarget = null;
+    let currentEditTarget = null;
+    let currentTab = 'art'; // 'art' 或 'prod'
+    let newItemBase64 = ''; // 暫存新建立項目的圖片
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderFrontArtworks();
+      renderFrontProducts();
+      updateCartDisplay();
+      updateAdminButtonState();
+
+      // 監聽後台 Tab 切換
+      document.getElementById('art-tab').addEventListener('shown.bs.tab', () => { currentTab = 'art'; });
+      document.getElementById('prod-tab').addEventListener('shown.bs.tab', () => { currentTab = 'prod'; });
+    });
+
+    // 渲染前台作品賞析
+    function renderFrontArtworks() {
+      const container = document.getElementById('artworksContainer');
+      container.innerHTML = artworks.map(art => `
+        <div class="col-sm-6 col-lg-3">
+          <div class="card card-artwork h-100 d-flex flex-column">
+            <div class="artwork-img-wrapper" onclick="openLightbox('art', '${art.id}')">
+              <span class="zoom-hint">
+                <i class="bi bi-arrows-fullscreen"></i> 放大檢視
+              </span>
+              <img src="${art.src}" alt="${art.title}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80'">
+            </div>
+            <div class="card-body p-3 d-flex flex-column justify-content-between flex-grow-1">
+              <div>
+                <span class="badge badge-brand mb-2">${art.tag}</span>
+                <h5 class="card-title fw-bold text-dark mb-2" style="font-size: 1.15rem;">${art.title}</h5>
+              </div>
+              <p class="text-secondary mb-0 lh-base text-break" style="font-size: 0.95rem;">${art.desc}</p>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 渲染前台原料專區
+    function renderFrontProducts() {
+      const container = document.getElementById('productsContainer');
+      container.innerHTML = products.map(prod => `
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-product h-100 p-3 d-flex flex-column justify-content-between">
+            <div>
+              <div class="prod-img-wrapper rounded-3 mb-3" onclick="openLightbox('prod', '${prod.id}')">
+                <span class="zoom-hint">
+                  <i class="bi bi-arrows-fullscreen"></i> 放大檢視
+                </span>
+                <img src="${prod.src}" alt="${prod.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'">
+              </div>
+              <span class="badge bg-secondary mb-2" style="font-size: 0.85rem;">${prod.spec}</span>
+              <h5 class="fw-bold text-dark mb-2" style="font-size: 1.2rem;">${prod.name}</h5>
+              <p class="text-secondary mb-3 lh-base text-break" style="font-size: 0.95rem;">${prod.desc}</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+              <span class="fw-bold text-dark" style="font-size: 1.5rem;">NT$ ${prod.price}</span>
+              <button class="btn btn-brand btn-sm px-3 py-2 rounded-pill" onclick="addToCart('${prod.id}')">
+                <i class="bi bi-cart-plus me-1"></i> 加入購物車
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 放大檢視
+    function openLightbox(type, id) {
+      let item = (type === 'art') ? artworks.find(a => a.id === id) : products.find(p => p.id === id);
+      if (!item) return;
+
+      document.getElementById('lightboxImage').src = item.src;
+      document.getElementById('lightboxName').textContent = item.title || item.name;
+      document.getElementById('lightboxBadge').textContent = item.tag || item.spec;
+      document.getElementById('lightboxDesc').textContent = item.desc;
+      document.getElementById('lightboxTitle').textContent = type === 'art' ? '水晶花作品賞析' : '原料規格詳情';
+
+      new bootstrap.Modal(document.getElementById('imageLightboxModal')).show();
+    }
+
+    // 後台登入檢查
+    function updateAdminButtonState() {
+      const btn = document.getElementById('adminEntryBtn');
+      if (isAdminLoggedIn) {
+        btn.innerHTML = `<i class="bi bi-gear-fill me-1 text-success"></i>進入控制台`;
+        btn.classList.replace('btn-outline-dark', 'btn-dark');
+      } else {
+        btn.innerHTML = `<i class="bi bi-shield-lock me-1"></i>後台管理`;
+        btn.classList.replace('btn-dark', 'btn-outline-dark');
+      }
+    }
+
+    function handleAdminEntryClick() {
+      if (isAdminLoggedIn) {
+        openAdminDashboard();
+      } else {
+        document.getElementById('loginAlertBox').classList.add('d-none');
+        document.getElementById('loginUsername').value = '';
+        document.getElementById('loginPassword').value = '';
+        new bootstrap.Modal(document.getElementById('adminLoginModal')).show();
+      }
+    }
+
+    function submitAdminLogin() {
+      const u = document.getElementById('loginUsername').value.trim();
+      const p = document.getElementById('loginPassword').value.trim();
+      const savedUser = localStorage.getItem('aura_admin_user') || '700817';
+      const savedPass = localStorage.getItem('aura_admin_pass') || '700817';
+
+      if (u === savedUser && p === savedPass) {
+        isAdminLoggedIn = true;
+        sessionStorage.setItem('aura_admin_logged', 'true');
+        bootstrap.Modal.getInstance(document.getElementById('adminLoginModal')).hide();
+        updateAdminButtonState();
+        openAdminDashboard();
+      } else {
+        const alertBox = document.getElementById('loginAlertBox');
+        alertBox.textContent = '帳號或密碼錯誤，請重新確認！';
+        alertBox.classList.remove('d-none');
+      }
+    }
+
+    function logoutAdmin() {
+      if (confirm('確定要登出管理員後台嗎？')) {
+        isAdminLoggedIn = false;
+        sessionStorage.removeItem('aura_admin_logged');
+        updateAdminButtonState();
+        bootstrap.Modal.getInstance(document.getElementById('adminDashboardModal')).hide();
+      }
+    }
+
+    // 後台管理面板
+    function openAdminDashboard() {
+      renderAdminArtList();
+      renderAdminProdList();
+      new bootstrap.Modal(document.getElementById('adminDashboardModal')).show();
+    }
+
+    function renderAdminArtList() {
+      const container = document.getElementById('adminArtList');
+      container.innerHTML = artworks.map(art => `
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border p-2 d-flex flex-column justify-content-between">
+            <div>
+              <div style="height: 140px; overflow: hidden;" class="rounded bg-light mb-2">
+                <img src="${art.src}" class="w-100 h-100 object-fit-cover" onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80'">
+              </div>
+              <div class="fw-bold" style="font-size: 1.05rem;">${art.title}</div>
+              <div class="text-secondary my-1" style="font-size: 0.85rem;">${art.desc}</div>
+            </div>
+            <div class="d-flex gap-1 mt-2">
+              <button class="btn btn-outline-primary btn-sm flex-fill" onclick="triggerAdminFileReplace('art', '${art.id}')">
+                <i class="bi bi-upload"></i> 換圖
+              </button>
+              <button class="btn btn-outline-secondary btn-sm flex-fill" onclick="openEditDetailModal('art', '${art.id}')">
+                <i class="bi bi-pencil"></i> 編輯說明
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderAdminProdList() {
+      const container = document.getElementById('adminProdList');
+      container.innerHTML = products.map(prod => `
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border p-2 d-flex flex-column justify-content-between">
+            <div>
+              <div style="height: 140px;" class="rounded bg-light mb-2 d-flex align-items-center justify-content-center p-2">
+                <img src="${prod.src}" style="max-height: 100%; max-width: 100%;" class="object-fit-contain" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'">
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="fw-bold" style="font-size: 1.05rem;">${prod.name}</span>
+                <span class="badge bg-secondary">NT$ ${prod.price}</span>
+              </div>
+              <div class="text-secondary my-1" style="font-size: 0.85rem;">${prod.desc}</div>
+            </div>
+            <div class="d-flex gap-1 mt-2">
+              <button class="btn btn-outline-primary btn-sm flex-fill" onclick="triggerAdminFileReplace('prod', '${prod.id}')">
+                <i class="bi bi-upload"></i> 換圖
+              </button>
+              <button class="btn btn-outline-secondary btn-sm flex-fill" onclick="openEditDetailModal('prod', '${prod.id}')">
+                <i class="bi bi-pencil"></i> 編輯說明
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 【新增選項功能】彈窗開啟與準備
+    function openCreateItemModal() {
+      document.getElementById('createItemForm').reset();
+      newItemBase64 = '';
+      document.getElementById('newItemImgPreview').classList.add('d-none');
+      document.getElementById('newItemUploadPlaceholder').classList.remove('d-none');
+      
+      const titleEl = document.getElementById('createModalTitle');
+      const priceGroup = document.getElementById('newItemPriceGroup');
+
+      if (currentTab === 'art') {
+        titleEl.innerHTML = `<i class="bi bi-plus-square-dotted me-2 text-primary"></i>新增作品選項`;
+        priceGroup.classList.add('d-none');
+        document.getElementById('newItemPrice').removeAttribute('required');
+      } else {
+        titleEl.innerHTML = `<i class="bi bi-plus-square-dotted me-2 text-primary"></i>新增原料選項`;
+        priceGroup.classList.remove('d-none');
+        document.getElementById('newItemPrice').setAttribute('required', 'true');
+      }
+
+      new bootstrap.Modal(document.getElementById('createItemModal')).show();
+    }
+
+    // 處理新項目的圖片選擇與預覽
+    document.getElementById('newItemFileInput').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        newItemBase64 = evt.target.result;
+        document.getElementById('newItemPreviewImg').src = newItemBase64;
+        document.getElementById('newItemImgPreview').classList.remove('d-none');
+        document.getElementById('newItemUploadPlaceholder').classList.add('d-none');
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // 提交新選項建立
+    function submitCreateItem() {
+      if (!newItemBase64) {
+        alert('請先上傳新選項的照片！');
+        return;
+      }
+
+      const title = document.getElementById('newItemTitle').value.trim();
+      const tag = document.getElementById('newItemTag').value.trim();
+      const desc = document.getElementById('newItemDesc').value.trim();
+      const newId = 'custom-' + Date.now();
+
+      if (currentTab === 'art') {
+        const newArt = {
+          id: newId,
+          title: title,
+          tag: tag,
+          file: '自訂作品.jpg',
+          src: newItemBase64,
+          desc: desc
+        };
+        artworks.push(newArt);
+        localStorage.setItem('aura_artworks_data', JSON.stringify(artworks));
+        renderAdminArtList();
+        renderFrontArtworks();
+      } else {
+        const price = parseInt(document.getElementById('newItemPrice').value, 10) || 0;
+        const newProd = {
+          id: newId,
+          name: title,
+          spec: tag,
+          file: '自訂原料.jpg',
+          src: newItemBase64,
+          desc: desc,
+          price: price
+        };
+        products.push(newProd);
+        localStorage.setItem('aura_products_data', JSON.stringify(products));
+        renderAdminProdList();
+        renderFrontProducts();
+      }
+
+      bootstrap.Modal.getInstance(document.getElementById('createItemModal')).hide();
+      alert('新選項已成功建立並同步至前台官網！');
+    }
+
+    // 編輯圖文資料
+    function openEditDetailModal(type, id) {
+      currentEditTarget = { type, id };
+      const item = (type === 'art') ? artworks.find(a => a.id === id) : products.find(p => p.id === id);
+      if (!item) return;
+
+      document.getElementById('editItemTitle').value = item.title || item.name;
+      document.getElementById('editItemTag').value = item.tag || item.spec;
+      document.getElementById('editItemDesc').value = item.desc;
+
+      const priceGroup = document.getElementById('editPriceGroup');
+      if (type === 'prod') {
+        priceGroup.classList.remove('d-none');
+        document.getElementById('editItemPrice').value = item.price;
+      } else {
+        priceGroup.classList.add('d-none');
+      }
+
+      new bootstrap.Modal(document.getElementById('editDetailModal')).show();
+    }
+
+    function saveDetailChanges() {
+      if (!currentEditTarget) return;
+      const title = document.getElementById('editItemTitle').value.trim();
+      const tag = document.getElementById('editItemTag').value.trim();
+      const desc = document.getElementById('editItemDesc').value.trim();
+
+      if (currentEditTarget.type === 'art') {
+        const item = artworks.find(a => a.id === currentEditTarget.id);
+        if (item) {
+          item.title = title;
+          item.tag = tag;
+          item.desc = desc;
+        }
+        localStorage.setItem('aura_artworks_data', JSON.stringify(artworks));
+        renderAdminArtList();
+        renderFrontArtworks();
+      } else {
+        const price = parseInt(document.getElementById('editItemPrice').value, 10) || 0;
+        const item = products.find(p => p.id === currentEditTarget.id);
+        if (item) {
+          item.name = title;
+          item.spec = tag;
+          item.desc = desc;
+          item.price = price;
+        }
+        localStorage.setItem('aura_products_data', JSON.stringify(products));
+        renderAdminProdList();
+        renderFrontProducts();
+      }
+
+      bootstrap.Modal.getInstance(document.getElementById('editDetailModal')).hide();
+      alert('圖文說明已更新成功！');
+    }
+
+    // 換圖處理
+    const adminFileInput = document.getElementById('adminReplaceInput');
+    function triggerAdminFileReplace(type, id) {
+      currentAdminTarget = { type, id };
+      adminFileInput.click();
+    }
+
+    adminFileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file || !currentAdminTarget) return;
+
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        const base64Data = evt.target.result;
+        if (currentAdminTarget.type === 'art') {
+          const item = artworks.find(a => a.id === currentAdminTarget.id);
+          if (item) item.src = base64Data;
+          localStorage.setItem('aura_artworks_data', JSON.stringify(artworks));
+          renderAdminArtList();
+          renderFrontArtworks();
+        } else {
+          const item = products.find(p => p.id === currentAdminTarget.id);
+          if (item) item.src = base64Data;
+          localStorage.setItem('aura_products_data', JSON.stringify(products));
+          renderAdminProdList();
+          renderFrontProducts();
+        }
+      };
+      reader.readAsDataURL(file);
+      e.target.value = '';
+    });
+
+    // 還原預設
+    function resetAllPhotosToDefault() {
+      if (confirm('確定要清除所有自訂修改，還原為預設圖文與路徑嗎？')) {
+        localStorage.removeItem('aura_artworks_data');
+        localStorage.removeItem('aura_products_data');
+        artworks = JSON.parse(JSON.stringify(defaultArtworks));
+        products = JSON.parse(JSON.stringify(defaultProducts));
+        renderAdminArtList();
+        renderAdminProdList();
+        renderFrontArtworks();
+        renderFrontProducts();
+      }
+    }
+
+    // 帳號管理
+    function openAccountManageModal() {
+      const currentUser = localStorage.getItem('aura_admin_user') || '700817';
+      document.getElementById('manageAdminUsername').value = currentUser;
+      document.getElementById('manageAdminPassword').value = '';
+      document.getElementById('manageConfirmPassword').value = '';
+      new bootstrap.Modal(document.getElementById('accountManageModal')).show();
+    }
+
+    function saveAccountSettings() {
+      const newUser = document.getElementById('manageAdminUsername').value.trim();
+      const newPass = document.getElementById('manageAdminPassword').value;
+      const confirmPass = document.getElementById('manageConfirmPassword').value;
+
+      if (!newUser) {
+        alert('帳號不能為空！');
+        return;
+      }
+      if (newPass !== confirmPass) {
+        alert('兩次輸入的新密碼不一致！');
+        return;
+      }
+
+      localStorage.setItem('aura_admin_user', newUser);
+      localStorage.setItem('aura_admin_pass', newPass);
+      alert(`帳號設定已成功更新！\n新帳號：${newUser}\n請牢記您的新密碼。`);
+      bootstrap.Modal.getInstance(document.getElementById('accountManageModal')).hide();
+    }
+
+    // 購物車與結帳
+    function addToCart(productId) {
+      const p = products.find(i => i.id === productId);
+      const exist = cart.find(i => i.id === productId);
+      if (exist) exist.qty += 1;
+      else cart.push({ ...p, qty: 1 });
+      updateCartDisplay();
+      new bootstrap.Offcanvas(document.getElementById('cartOffcanvas')).show();
+    }
+
+    function changeCartQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const totalCount = cart.reduce((s, i) => s + i.qty, 0);
+      const totalPrice = cart.reduce((s, i) => s + i.qty * i.price, 0);
+      document.getElementById('cartCountBadge').textContent = totalCount;
+      document.getElementById('cartTotalDisplay').textContent = `NT$ ${totalPrice.toLocaleString()}`;
+
+      const container = document.getElementById('cartItemsList');
+      if (cart.length === 0) {
+        container.innerHTML = `<div class="text-center text-muted py-5" style="font-size: 1rem;">購物車是空的</div>`;
+      } else {
+        container.innerHTML = cart.map(item => `
+          <div class="d-flex justify-content-between align-items-center p-2 mb-2 bg-light rounded-3">
+            <div class="me-2 text-truncate" style="max-width: 210px;">
+              <div class="fw-bold text-dark text-truncate" style="font-size: 0.95rem;">${item.name}</div>
+              <div class="text-muted" style="font-size: 0.85rem;">NT$ ${item.price}</div>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+              <button class="btn btn-sm btn-white border px-2 py-0" onclick="changeCartQty('${item.id}', -1)">-</button>
+              <span class="fw-bold px-1" style="font-size: 0.95rem;">${item.qty}</span>
+              <button class="btn btn-sm btn-white border px-2 py-0" onclick="changeCartQty('${item.id}', 1)">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function startCheckoutProcess() {
+      if (cart.length === 0) return alert('請先選購商品！');
+      const selected = document.querySelector('input[name="gatewayRadio"]:checked').value;
+      const total = cart.reduce((s, i) => s + i.qty * i.price, 0);
+
+      document.getElementById('payModalGatewayName').textContent = selected.toUpperCase() + ' 金流網關';
+      document.getElementById('payModalOrderId').textContent = 'ORD-' + Date.now().toString().slice(-8);
+      document.getElementById('payModalAmount').textContent = `NT$ ${total.toLocaleString()}`;
+
+      new bootstrap.Modal(document.getElementById('paymentProcessModal')).show();
+    }
+
+    function simulatePaymentSuccess() {
+      alert('【金流回傳交易成功】\n已收到授權驗證碼，訂單正式成立！');
+      cart = [];
+      updateCartDisplay();
+      bootstrap.Modal.getInstance(document.getElementById('paymentProcessModal')).hide();
+      bootstrap.Offcanvas.getInstance(document.getElementById('cartOffcanvas')).hide();
+    }
+  </script>
+</body>
+</html>
